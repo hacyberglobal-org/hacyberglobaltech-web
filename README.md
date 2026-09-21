@@ -1,6 +1,6 @@
-# HACYBERGLOBALTECH
+## HACYBERGLOBALTECH
 
-## Professional Digital Support & Verification Assistance Platform
+ Professional Digital Support & Verification Assistance Platform
 
 HACYBERGLOBALTECH provides secure digital support, verification guidance, technical assistance, setup support, and customer service solutions for individuals and businesses.
 
