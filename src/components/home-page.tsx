@@ -7,6 +7,7 @@ import {
   Headphones,
   Info,
   LineChart,
+  Play,
   Send,
   Settings,
   Shield,
@@ -20,6 +21,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SupportSheet } from "@/components/support-sheet";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/lib/content";
+import { PLATFORMS } from "@/lib/platforms";
 import { useSite } from "@/lib/site-context";
 import { cn } from "@/lib/utils";
 
@@ -32,8 +34,10 @@ export function HomePage() {
       <SiteHeader />
       <main id="main" tabIndex={-1}>
         <Hero />
+        <PlatformsSection />
         <ProviderSection />
         <ProcessSection />
+        <GuideSection />
         <CtaSection />
       </main>
       <SiteFooter />
@@ -278,6 +282,88 @@ function CtaSection() {
           <p className="mt-2 font-display text-lg font-semibold text-fg">HACYBERGLOBALTECH</p>
           <p className="text-[11px] text-muted">Driver Support / Account Assistance</p>
           <p className="mt-3 text-sm font-semibold text-muted">{c.trust}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PlatformsSection() {
+  const { t } = useSite();
+  const p = t.platforms;
+  const row = [...PLATFORMS, ...PLATFORMS];
+
+  return (
+    <section id="apps" className="relative px-4 py-8 sm:px-6" aria-labelledby="apps-heading">
+      <div className="mx-auto max-w-[1280px]">
+        <p className="text-xs font-bold tracking-[0.16em] text-accent">{p.kicker}</p>
+        <h2 id="apps-heading" className="mt-1 font-display text-2xl font-bold text-fg sm:text-3xl">
+          {p.title}
+        </h2>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">{p.body}</p>
+      </div>
+      <div className="mt-6 overflow-hidden">
+        <div className="logo-marquee flex w-max gap-3 pr-3">
+          {row.map((app, i) => (
+            <div
+              key={`${app.slug}-${i}`}
+              className="flex h-20 w-36 shrink-0 flex-col items-center justify-center gap-1 rounded-xl border border-line bg-surface/50 px-2"
+            >
+              <img src={app.file} alt="" className="size-10" />
+              <span className="max-w-full truncate text-center text-[11px] font-semibold text-fg">
+                {app.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <p className="mx-auto mt-4 max-w-[1280px] text-center text-xs text-muted">{p.note}</p>
+    </section>
+  );
+}
+
+function GuideSection() {
+  const { t, openSupport } = useSite();
+  const g = t.guide;
+
+  return (
+    <section id="guide" className="px-4 py-10 sm:px-6" aria-labelledby="guide-heading">
+      <div className="glass-panel mx-auto grid max-w-[1280px] items-center gap-6 rounded-2xl p-4 sm:p-6 lg:grid-cols-[1.35fr_0.9fr]">
+        <div className="overflow-hidden rounded-xl border border-line bg-bg">
+          <video
+            id="guide-video"
+            className="aspect-video w-full bg-bg"
+            controls
+            playsInline
+            preload="metadata"
+            poster="/images/laptop.jpg"
+            aria-label={g.title}
+          >
+            <source src="/videos/guide.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="lg:pr-2">
+          <p className="text-xs font-bold tracking-[0.16em] text-accent">{g.kicker}</p>
+          <h2 id="guide-heading" className="mt-1 font-display text-2xl font-bold text-fg sm:text-3xl">
+            {g.title}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">{g.body}</p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Button
+              size="lg"
+              onClick={() => {
+                const v = document.getElementById("guide-video") as HTMLVideoElement | null;
+                void v?.play();
+              }}
+            >
+              <Play className="size-4" aria-hidden="true" />
+              {g.watch}
+            </Button>
+            <Button size="lg" variant="outline" onClick={() => openSupport()}>
+              {t.nav.getSupport}
+              <Send className="size-4" aria-hidden="true" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>

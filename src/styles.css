@@ -124,6 +124,19 @@
     outline: 2px solid #5cc8ff;
     outline-offset: 2px;
   }
+
+  .logo-marquee {
+    animation: logo-marquee 48s linear infinite;
+  }
+}
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -137,5 +150,9 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .logo-marquee {
+    animation: none;
   }
 }

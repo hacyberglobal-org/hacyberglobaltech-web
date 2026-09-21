@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Point Pickup">
+  <rect width="64" height="64" rx="14" fill="#0b1220"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#2B6CB0" stroke-width="2"/>
+  <circle cx="32" cy="16" r="3.2" fill="#2B6CB0"/>
+  <text x="32" y="30" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" fill="#fff">Point</text>
+  <text x="32" y="43" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" fill="#fff">Pickup</text>
+</svg>

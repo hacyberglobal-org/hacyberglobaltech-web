@@ -106,6 +106,18 @@ export const copy = {
         },
       ],
     },
+    platforms: {
+      kicker: "GIG & DELIVERY APPS",
+      title: "The apps we specifically support",
+      body: "Driver support, account assistance, and app setup help across major gig and delivery platforms.",
+      note: "Independent support. Not affiliated with, endorsed by, or part of these platforms.",
+    },
+    guide: {
+      kicker: "VIDEO GUIDE",
+      title: "How we help, in 15 seconds",
+      body: "Watch the walkthrough, then tap Get Support for live help on the app you drive.",
+      watch: "Play guide",
+    },
     cta: {
       kicker: "READY TO GET STARTED?",
       title: "Let's Get You Supported.",
@@ -244,6 +256,18 @@ export const copy = {
           desc: "Estamos si necesita seguimiento, facturación u otro servicio.",
         },
       ],
+    },
+    platforms: {
+      kicker: "APPS GIG Y DELIVERY",
+      title: "Las apps que apoyamos",
+      body: "Soporte para conductores, asistencia de cuentas y configuración de apps en las principales plataformas gig y de delivery.",
+      note: "Soporte independiente. No estamos afiliados, respaldados ni formamos parte de estas plataformas.",
+    },
+    guide: {
+      kicker: "GUÍA EN VIDEO",
+      title: "Cómo ayudamos, en 15 segundos",
+      body: "Vea la guía y pulse Obtener soporte para ayuda en vivo en la app que conduce.",
+      watch: "Reproducir guía",
     },
     cta: {
       kicker: "¿LISTO PARA EMPEZAR?",

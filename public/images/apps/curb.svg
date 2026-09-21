@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Curb">
+  <rect width="64" height="64" rx="14" fill="#0b1220"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#60A5FA" stroke-width="2"/>
+  <circle cx="32" cy="16" r="3.2" fill="#60A5FA"/>
+  <text x="32" y="36" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#fff">Curb</text>
+</svg>
