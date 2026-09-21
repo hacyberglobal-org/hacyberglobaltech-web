@@ -54,7 +54,7 @@ function Hero() {
       <img
         src="/images/hero.jpg"
         alt=""
-        className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[58%] object-cover object-[70%_center] lg:block"
+        className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[58%] object-cover object-[32%_18%] lg:block"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-bg from-0% via-bg/80 via-42% to-transparent to-78%" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-bg to-transparent" />
@@ -102,8 +102,8 @@ function Hero() {
         <div className="relative min-h-[320px] sm:min-h-[420px]">
           <img
             src="/images/hero.jpg"
-            alt="HACYBERGLOBALTECH specialist"
-            className="h-[340px] w-full rounded-2xl object-cover object-center shadow-[var(--shadow-card)] outline outline-1 -outline-offset-1 outline-white/10 sm:h-[440px] lg:hidden"
+            alt="HACYBERGLOBALTECH operator"
+            className="h-[340px] w-full rounded-2xl object-cover object-[32%_16%] shadow-[var(--shadow-card)] outline outline-1 -outline-offset-1 outline-white/10 sm:h-[440px] lg:hidden"
           />
           <div className="absolute top-4 right-2 w-[190px] rounded-xl border border-line bg-surface/55 p-4 shadow-[var(--shadow-glow)] backdrop-blur-xl sm:right-6 sm:top-8 sm:w-[210px]">
             <div className="mx-auto mb-2 flex size-10 items-center justify-center rounded-full border border-accent/40 text-accent">
