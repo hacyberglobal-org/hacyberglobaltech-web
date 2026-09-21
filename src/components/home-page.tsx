@@ -30,7 +30,7 @@ export function HomePage() {
   return (
     <div id="top" className="min-h-dvh bg-bg text-fg">
       <SiteHeader />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
         <ProviderSection />
         <ProcessSection />
@@ -61,7 +61,7 @@ function Hero() {
       <div className="relative mx-auto grid max-w-[1280px] items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/50 px-3 py-1.5 text-[11px] font-semibold tracking-[0.12em] text-accent">
-            <Shield className="size-3.5" />
+            <Shield className="size-3.5" aria-hidden="true" />
             {h.badge}
           </div>
           <h1 className="mt-5 font-display text-[2.15rem] font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[56px]">
@@ -82,10 +82,10 @@ function Hero() {
                   key={feat.title}
                   type="button"
                   onClick={() => openSupport(feat.title)}
-                  className="group flex flex-col items-start gap-2 text-left"
+                  className="group flex min-h-11 flex-col items-start gap-2 text-left"
                 >
                   <span className="flex size-12 items-center justify-center rounded-full border border-line bg-surface/40 text-accent shadow-[var(--shadow-card)] transition-[box-shadow,border-color] duration-200 group-hover:border-line-strong group-hover:shadow-[var(--shadow-glow)]">
-                    <Icon className="size-5" />
+                    <Icon className="size-5" aria-hidden="true" />
                   </span>
                   <span className="text-[13px] font-semibold leading-tight text-fg">
                     {feat.title}
@@ -106,23 +106,23 @@ function Hero() {
           />
           <div className="absolute top-4 right-2 w-[190px] rounded-xl border border-line bg-surface/55 p-4 shadow-[var(--shadow-glow)] backdrop-blur-xl sm:right-6 sm:top-8 sm:w-[210px]">
             <div className="mx-auto mb-2 flex size-10 items-center justify-center rounded-full border border-accent/40 text-accent">
-              <CircleCheck className="size-5" />
+              <CircleCheck className="size-5" aria-hidden="true" />
             </div>
             <p className="text-center font-display text-lg font-bold tracking-wide text-fg">
               {h.verified}
             </p>
-            <p className="text-center text-[10px] font-semibold tracking-[0.16em] text-muted">
+            <p className="text-center text-xs font-semibold tracking-[0.16em] text-muted">
               {h.verifiedSub}
             </p>
           </div>
           <div className="absolute right-2 bottom-6 w-[210px] rounded-xl border border-line bg-surface/55 p-4 shadow-[var(--shadow-glow)] backdrop-blur-xl sm:right-8 sm:bottom-10 sm:w-[230px]">
             <div className="mb-3 flex size-10 items-center justify-center rounded-full border border-accent/40 text-accent">
-              <ShieldCheck className="size-5" />
+              <ShieldCheck className="size-5" aria-hidden="true" />
             </div>
             <ul className="space-y-1.5">
               {h.checks.map((item) => (
                 <li key={item} className="flex items-center gap-2 text-[12px] text-fg">
-                  <Check className="size-3.5 text-accent" />
+                  <Check className="size-3.5 text-accent" aria-hidden="true" />
                   {item}
                 </li>
               ))}
@@ -160,29 +160,30 @@ function ProviderSection() {
               <a
                 href={CONTACT.fadv}
                 target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-bright"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent underline-offset-4 hover:text-accent-bright hover:underline"
               >
                 {p.learn}
-                <ExternalLink className="size-3.5" />
+                <ExternalLink className="size-3.5" aria-hidden="true" />
+                <span className="sr-only">({t.a11y.opensNewWindow})</span>
               </a>
             </div>
           </div>
           <div className="mt-5 flex items-start gap-2 border-t border-line pt-4 text-[13px] leading-relaxed text-muted">
-            <Info className="mt-0.5 size-4 shrink-0 text-accent" />
+            <Info className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
             <p>{p.disclaimer}</p>
           </div>
         </article>
 
         <article className="glass-panel rounded-2xl p-5 sm:p-6">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="size-5 text-accent" />
+            <ShieldCheck className="size-5 text-accent" aria-hidden="true" />
             <h2 className="font-display text-xl font-semibold text-fg">{w.title}</h2>
           </div>
           <ul className="mt-5 space-y-3">
             {w.items.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-fg">
-                <Check className="mt-0.5 size-4 shrink-0 text-accent" />
+                <Check className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -199,14 +200,16 @@ function ProcessSection() {
   const p = t.process;
 
   return (
-    <section id="process" className="px-4 py-10 sm:px-6">
+    <section id="process" className="px-4 py-10 sm:px-6" aria-labelledby="process-heading">
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-6 flex items-center gap-3">
           <span className="flex size-9 items-center justify-center rounded-md border border-line text-accent">
-            <FileText className="size-4" />
+            <FileText className="size-4" aria-hidden="true" />
           </span>
           <div>
-            <h2 className="font-display text-2xl font-bold text-fg">{p.title}</h2>
+            <h2 id="process-heading" className="font-display text-2xl font-bold text-fg">
+              {p.title}
+            </h2>
             <p className="text-sm text-muted">{p.subtitle}</p>
           </div>
         </div>
@@ -222,6 +225,7 @@ function ProcessSection() {
                   "group relative rounded-xl border border-line bg-surface/40 p-4 text-left",
                   "transition-[box-shadow,border-color,transform] duration-200",
                   "hover:border-line-strong hover:shadow-[var(--shadow-glow)]",
+                  "focus-visible:border-line-strong focus-visible:shadow-[var(--shadow-glow)]",
                 )}
               >
                 <span className="absolute top-3 left-3 flex size-6 items-center justify-center rounded-full border border-line text-[11px] font-bold text-muted">
@@ -229,15 +233,15 @@ function ProcessSection() {
                 </span>
                 {i < p.steps.length - 1 ? (
                   <span className="pointer-events-none absolute top-1/2 -right-3 z-10 hidden -translate-y-1/2 text-accent xl:block">
-                    <ChevronRight className="size-5" />
+                    <ChevronRight className="size-5" aria-hidden="true" />
                   </span>
                 ) : null}
                 <div className="mt-4 flex flex-col items-center text-center">
                   <span className="mb-3 flex size-12 items-center justify-center rounded-full border border-line text-accent">
-                    <Icon className="size-5" />
+                    <Icon className="size-5" aria-hidden="true" />
                   </span>
                   <h3 className="font-display text-sm font-semibold text-fg">{step.title}</h3>
-                  <p className="mt-2 text-[12px] leading-relaxed text-muted">{step.desc}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted">{step.desc}</p>
                 </div>
               </button>
             );
@@ -266,7 +270,7 @@ function CtaSection() {
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{c.body}</p>
           <Button size="lg" className="mt-5" onClick={() => openSupport()}>
             {c.button}
-            <Send className="size-4" />
+            <Send className="size-4" aria-hidden="true" />
           </Button>
         </div>
         <div className="flex flex-col items-center justify-center border-t border-line pt-4 text-center lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6">

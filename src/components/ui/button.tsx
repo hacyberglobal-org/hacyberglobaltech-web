@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "btn-gradient text-fg shadow-[var(--shadow-btn)] hover:brightness-110 rounded-full",
+          "btn-gradient text-white shadow-[var(--shadow-btn)] hover:brightness-110 rounded-full",
         outline:
           "rounded-full border border-line bg-surface/50 text-fg hover:border-line-strong hover:shadow-[var(--shadow-glow)]",
         ghost: "rounded-full text-muted hover:text-fg hover:bg-surface/60",

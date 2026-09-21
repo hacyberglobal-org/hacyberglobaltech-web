@@ -11,5 +11,6 @@ export function scrollToId(id: string) {
   const header = document.querySelector("header");
   const offset = (header?.getBoundingClientRect().height ?? 80) + 8;
   const y = el.getBoundingClientRect().top + window.scrollY - offset;
-  window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: Math.max(0, y), behavior: reduce ? "auto" : "smooth" });
 }

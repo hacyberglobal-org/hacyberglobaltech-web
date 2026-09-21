@@ -35,37 +35,40 @@ export function SiteFooter() {
           <p className="mt-1 text-xs text-muted">{t.footer.tagline}</p>
         </div>
         <div>
-          <p className="mb-2 text-xs font-medium text-muted">{t.footer.connect}</p>
-          <div className="flex items-center gap-2">
+          <p id="connect-heading" className="mb-2 text-xs font-medium text-muted">
+            {t.footer.connect}
+          </p>
+          <nav className="flex flex-wrap items-center gap-2" aria-labelledby="connect-heading">
             {socials.map(({ key, href, Icon, label }) => (
               <a
                 key={key}
                 href={href}
                 target="_blank"
-                rel="noreferrer"
-                aria-label={label}
+                rel="noopener noreferrer"
+                aria-label={`${label} (${t.a11y.opensNewWindow})`}
                 className={cn(
-                  "flex size-9 items-center justify-center rounded-full border border-line bg-surface/50 text-accent",
+                  "flex size-11 items-center justify-center rounded-full border border-line bg-surface/50 text-accent",
                   "transition-[box-shadow,border-color,transform] duration-150 hover:border-line-strong hover:shadow-[var(--shadow-glow)]",
                 )}
               >
-                <Icon className="size-4" />
+                <Icon className="size-4" aria-hidden="true" />
               </a>
             ))}
-          </div>
+          </nav>
         </div>
         <button
+          type="button"
           onClick={() => openSupport()}
-          className="flex items-center gap-3 rounded-xl border border-line bg-surface/40 px-4 py-3 text-left transition-colors hover:border-line-strong"
+          className="flex min-h-11 items-center gap-3 rounded-xl border border-line bg-surface/40 px-4 py-3 text-left transition-colors hover:border-line-strong"
         >
           <span className="flex size-10 items-center justify-center rounded-full border border-line text-accent">
-            <Headphones className="size-5" />
+            <Headphones className="size-5" aria-hidden="true" />
           </span>
           <span>
             <span className="block text-xs text-muted">{t.footer.help}</span>
             <span className="inline-flex items-center gap-1 text-sm font-semibold text-fg">
               {t.footer.contact}
-              <ChevronRight className="size-4 text-accent" />
+              <ChevronRight className="size-4 text-accent" aria-hidden="true" />
             </span>
           </span>
         </button>

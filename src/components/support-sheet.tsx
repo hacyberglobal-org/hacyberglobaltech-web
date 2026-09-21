@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Calendar, Mail, Send, X } from "lucide-react";
 import { toast } from "sonner";
@@ -42,9 +42,17 @@ export function SupportSheet() {
     return Object.keys(next).length === 0;
   }
 
-  function onSubmit(e: React.FormEvent) {
+  function onSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!validate()) return;
+    if (!validate()) {
+      window.requestAnimationFrame(() => {
+        const invalid = document.querySelector<HTMLElement>(
+          "#support-name[aria-invalid='true'], #support-email[aria-invalid='true'], #support-message[aria-invalid='true']",
+        );
+        invalid?.focus();
+      });
+      return;
+    }
     setSending(true);
     const subject = encodeURIComponent(
       `HACYBERGLOBALTECH support — ${service || "General"} — ${name}`,
@@ -81,66 +89,85 @@ export function SupportSheet() {
             </div>
             <Dialog.Close asChild>
               <Button variant="ghost" size="icon" aria-label={s.close}>
-                <X className="size-5" />
+                <X className="size-5" aria-hidden="true" />
               </Button>
             </Dialog.Close>
           </div>
 
           <div className="flex-1 overflow-y-auto px-6 py-5">
             {sent ? (
-              <div className="glass-panel rounded-xl p-5">
+              <div className="glass-panel rounded-xl p-5" role="status">
                 <p className="font-display text-lg font-semibold text-fg">{s.successTitle}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{s.successBody}</p>
                 <div className="mt-5 flex flex-col gap-2">
                   <Button asChild>
-                    <a href={CONTACT.socials.whatsapp} target="_blank" rel="noreferrer">
-                      <WhatsAppIcon className="size-4" />
+                    <a
+                      href={CONTACT.socials.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WhatsAppIcon className="size-4" aria-hidden="true" />
                       {s.whatsapp}
+                      <span className="sr-only">({t.a11y.opensNewWindow})</span>
                     </a>
                   </Button>
                   <Button variant="outline" asChild>
-                    <a href={CONTACT.calendly} target="_blank" rel="noreferrer">
-                      <Calendar className="size-4" />
+                    <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer">
+                      <Calendar className="size-4" aria-hidden="true" />
                       {s.book}
+                      <span className="sr-only">({t.a11y.opensNewWindow})</span>
                     </a>
                   </Button>
                   <Button variant="outline" asChild>
                     <a href={`mailto:${CONTACT.email}`}>
-                      <Mail className="size-4" />
+                      <Mail className="size-4" aria-hidden="true" />
                       {s.emailUs}
                     </a>
                   </Button>
                 </div>
               </div>
             ) : (
-              <form onSubmit={onSubmit} className="flex flex-col gap-4">
-                <Field label={s.name} error={errors.name}>
+              <form onSubmit={onSubmit} className="flex flex-col gap-4" noValidate>
+                <Field id="support-name" label={s.name} error={errors.name} required>
                   <Input
+                    id="support-name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder={s.placeholderName}
                     autoComplete="name"
+                    required
+                    aria-required="true"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? "support-name-error" : undefined}
                   />
                 </Field>
-                <Field label={s.email} error={errors.email}>
+                <Field id="support-email" label={s.email} error={errors.email} required>
                   <Input
+                    id="support-email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={s.placeholderEmail}
                     autoComplete="email"
+                    required
+                    aria-required="true"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? "support-email-error" : undefined}
                   />
                 </Field>
-                <Field label={s.phone}>
+                <Field id="support-phone" label={s.phone}>
                   <Input
+                    id="support-phone"
+                    type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder={s.placeholderPhone}
                     autoComplete="tel"
                   />
                 </Field>
-                <Field label={s.service}>
+                <Field id="support-service" label={s.service}>
                   <select
+                    id="support-service"
                     value={service}
                     onChange={(e) => setService(e.target.value)}
                     className="h-11 w-full rounded-md border border-line bg-bg/70 px-3 text-sm text-fg outline-none focus-visible:border-accent focus-visible:shadow-[var(--shadow-glow)]"
@@ -153,34 +180,41 @@ export function SupportSheet() {
                     ))}
                   </select>
                 </Field>
-                <Field label={s.message} error={errors.message}>
+                <Field id="support-message" label={s.message} error={errors.message} required>
                   <Textarea
+                    id="support-message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder={s.placeholderMessage}
+                    required
+                    aria-required="true"
+                    aria-invalid={Boolean(errors.message)}
+                    aria-describedby={errors.message ? "support-message-error" : undefined}
                   />
                 </Field>
-                <Button type="submit" size="lg" disabled={sending}>
-                  <Send className="size-4" />
+                <Button type="submit" size="lg" disabled={sending} aria-busy={sending}>
+                  <Send className="size-4" aria-hidden="true" />
                   {sending ? s.sending : s.submit}
                 </Button>
                 <a
                   href={CONTACT.socials.whatsapp}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-line text-sm font-semibold text-accent transition-colors hover:border-line-strong hover:bg-surface/60"
                 >
-                  <WhatsAppIcon className="size-4" />
+                  <WhatsAppIcon className="size-4" aria-hidden="true" />
                   {s.whatsapp}
+                  <span className="sr-only">({t.a11y.opensNewWindow})</span>
                 </a>
                 <a
                   href={CONTACT.calendly}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-line text-sm font-semibold text-accent transition-colors hover:border-line-strong hover:bg-surface/60"
                 >
-                  <Calendar className="size-4" />
+                  <Calendar className="size-4" aria-hidden="true" />
                   {s.book}
+                  <span className="sr-only">({t.a11y.opensNewWindow})</span>
                 </a>
               </form>
             )}
@@ -192,19 +226,35 @@ export function SupportSheet() {
 }
 
 function Field({
+  id,
   label,
   error,
+  required,
   children,
 }: {
+  id: string;
   label: string;
   error?: string;
-  children: React.ReactNode;
+  required?: boolean;
+  children: ReactNode;
 }) {
   return (
-    <label className="flex flex-col gap-1.5">
-      <Label>{label}</Label>
+    <div className="flex flex-col gap-1.5">
+      <Label htmlFor={id}>
+        {label}
+        {required ? (
+          <span className="text-accent" aria-hidden="true">
+            {" "}
+            *
+          </span>
+        ) : null}
+      </Label>
       {children}
-      {error ? <span className="text-xs text-red-400">{error}</span> : null}
-    </label>
+      {error ? (
+        <span id={`${id}-error`} role="alert" className="text-xs text-red-400">
+          {error}
+        </span>
+      ) : null}
+    </div>
   );
 }

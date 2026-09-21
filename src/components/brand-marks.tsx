@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useSite } from "@/lib/site-context";
 
 export function LogoMark({ className }: { className?: string }) {
   return (
@@ -18,11 +19,12 @@ export function BrandLockup({
   compact?: boolean;
   className?: string;
 }) {
+  const { t } = useSite();
   return (
     <a
       href="#top"
-      className={cn("flex items-center gap-2.5", className)}
-      aria-label="HACYBERGLOBALTECH home"
+      className={cn("flex items-center gap-2.5 rounded-md", className)}
+      aria-label={t.a11y.home}
     >
       <LogoMark className={compact ? "size-11" : "size-14"} />
       <span className="leading-none">

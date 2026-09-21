@@ -19,6 +19,7 @@ export const Route = createRootRoute({
           "HACYBERGLOBALTECH — driver support, account assistance, and app setup help. Professional delivery and digital support services with live technical guidance.",
       },
       { name: "theme-color", content: "#050A14" },
+      { name: "color-scheme", content: "dark" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

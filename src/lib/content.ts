@@ -146,6 +146,17 @@ export const copy = {
       placeholderMessage:
         "Share the app, platform, or account issue and where you need help.",
     },
+    a11y: {
+      skip: "Skip to main content",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      language: "Language",
+      english: "English",
+      spanish: "Spanish",
+      opensNewWindow: "opens in a new tab",
+      home: "HACYBERGLOBALTECH home",
+      primaryNav: "Primary",
+    },
   },
   es: {
     nav: {
@@ -273,6 +284,17 @@ export const copy = {
       placeholderPhone: "+1 …",
       placeholderMessage:
         "Indique la app, la plataforma o el problema de cuenta y en qué necesita ayuda.",
+    },
+    a11y: {
+      skip: "Saltar al contenido principal",
+      openMenu: "Abrir menú",
+      closeMenu: "Cerrar menú",
+      language: "Idioma",
+      english: "Inglés",
+      spanish: "Español",
+      opensNewWindow: "se abre en una pestaña nueva",
+      home: "Inicio de HACYBERGLOBALTECH",
+      primaryNav: "Principal",
     },
   },
 } as const;

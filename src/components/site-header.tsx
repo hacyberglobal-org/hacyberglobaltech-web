@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, Globe, Menu, Send, X } from "lucide-react";
 import { BrandLockup } from "@/components/brand-marks";
 import { Button } from "@/components/ui/button";
@@ -20,18 +20,41 @@ export function SiteHeader() {
     scrollToId(id);
   }
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setMobileOpen(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
+
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-bg/75 backdrop-blur-xl">
+      <a
+        href="#main"
+        className="skip-link"
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToId("main");
+          document.getElementById("main")?.focus();
+        }}
+      >
+        {t.a11y.skip}
+      </a>
       <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between gap-3 px-4 sm:px-6">
         <BrandLockup />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label={t.a11y.primaryNav}>
           <NavLink onClick={() => go("top")}>{t.nav.home}</NavLink>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-fg">
+              <button
+                type="button"
+                className="inline-flex min-h-11 items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-fg"
+              >
                 {t.nav.services}
-                <ChevronDown className="size-3.5" />
+                <ChevronDown className="size-3.5" aria-hidden="true" />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="center">
@@ -53,47 +76,70 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="hidden items-center gap-1.5 text-xs font-semibold text-muted sm:flex">
-            <Globe className="size-4 text-accent" />
+          <div
+            className="hidden items-center gap-1.5 text-xs font-semibold text-muted sm:flex"
+            role="group"
+            aria-label={t.a11y.language}
+          >
+            <Globe className="size-4 text-accent" aria-hidden="true" />
             <button
+              type="button"
               className={cn(
-                "rounded-full px-1.5 py-1",
+                "min-h-11 min-w-11 rounded-full px-1.5 py-1",
                 lang === "en" ? "text-fg" : "hover:text-fg",
               )}
+              aria-pressed={lang === "en"}
+              aria-label={t.a11y.english}
               onClick={() => setLang("en")}
             >
               EN
             </button>
-            <span className="text-line-strong">|</span>
+            <span className="text-line-strong" aria-hidden="true">
+              |
+            </span>
             <button
+              type="button"
               className={cn(
-                "rounded-full px-1.5 py-1",
+                "min-h-11 min-w-11 rounded-full px-1.5 py-1",
                 lang === "es" ? "text-fg" : "hover:text-fg",
               )}
+              aria-pressed={lang === "es"}
+              aria-label={t.a11y.spanish}
               onClick={() => setLang("es")}
             >
               ES
             </button>
           </div>
-          <Button size="sm" className="h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm" onClick={() => openSupport()}>
+          <Button
+            size="sm"
+            className="h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm"
+            aria-label={t.nav.getSupport}
+            onClick={() => openSupport()}
+          >
             <span className="hidden sm:inline">{t.nav.getSupport}</span>
-            <Send className="size-3.5" />
+            <Send className="size-3.5" aria-hidden="true" />
           </Button>
           <Button
             variant="ghost"
             size="icon"
             className="lg:hidden"
-            aria-label="Menu"
+            aria-label={mobileOpen ? t.a11y.closeMenu : t.a11y.openMenu}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
             onClick={() => setMobileOpen((v) => !v)}
           >
-            {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            {mobileOpen ? (
+              <X className="size-5" aria-hidden="true" />
+            ) : (
+              <Menu className="size-5" aria-hidden="true" />
+            )}
           </Button>
         </div>
       </div>
 
       {mobileOpen ? (
-        <div className="border-t border-line bg-bg/95 px-4 py-4 lg:hidden">
-          <div className="flex flex-col gap-1">
+        <div id="mobile-nav" className="border-t border-line bg-bg/95 px-4 py-4 lg:hidden">
+          <nav className="flex flex-col gap-1" aria-label={t.a11y.primaryNav}>
             <MobileLink onClick={() => go("top")}>{t.nav.home}</MobileLink>
             {t.servicesMenu.map((item) => (
               <MobileLink
@@ -117,22 +163,46 @@ export function SiteHeader() {
             </MobileLink>
             <MobileLink onClick={() => go("contact")}>{t.nav.contact}</MobileLink>
             <div className="mt-3 flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm font-semibold">
-                <Globe className="size-4 text-accent" />
-                <button onClick={() => setLang("en")} className={lang === "en" ? "text-fg" : "text-muted"}>
+              <div
+                className="flex items-center gap-2 text-sm font-semibold"
+                role="group"
+                aria-label={t.a11y.language}
+              >
+                <Globe className="size-4 text-accent" aria-hidden="true" />
+                <button
+                  type="button"
+                  onClick={() => setLang("en")}
+                  aria-pressed={lang === "en"}
+                  aria-label={t.a11y.english}
+                  className={cn("min-h-11 min-w-11", lang === "en" ? "text-fg" : "text-muted")}
+                >
                   EN
                 </button>
-                <span className="text-muted">|</span>
-                <button onClick={() => setLang("es")} className={lang === "es" ? "text-fg" : "text-muted"}>
+                <span className="text-muted" aria-hidden="true">
+                  |
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setLang("es")}
+                  aria-pressed={lang === "es"}
+                  aria-label={t.a11y.spanish}
+                  className={cn("min-h-11 min-w-11", lang === "es" ? "text-fg" : "text-muted")}
+                >
                   ES
                 </button>
               </div>
-              <Button size="sm" onClick={() => { setMobileOpen(false); openSupport(); }}>
+              <Button
+                size="sm"
+                onClick={() => {
+                  setMobileOpen(false);
+                  openSupport();
+                }}
+              >
                 {t.nav.getSupport}
-                <Send className="size-3.5" />
+                <Send className="size-3.5" aria-hidden="true" />
               </Button>
             </div>
-          </div>
+          </nav>
         </div>
       ) : null}
     </header>
@@ -148,6 +218,7 @@ function NavLink({
 }) {
   return (
     <button
+      type="button"
       onClick={onClick}
       className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-fg"
     >
@@ -165,8 +236,9 @@ function MobileLink({
 }) {
   return (
     <button
+      type="button"
       onClick={onClick}
-      className="rounded-md px-3 py-3 text-left text-sm font-medium text-fg hover:bg-surface/70"
+      className="min-h-11 rounded-md px-3 py-3 text-left text-sm font-medium text-fg hover:bg-surface/70"
     >
       {children}
     </button>
