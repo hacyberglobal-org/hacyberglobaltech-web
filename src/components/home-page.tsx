@@ -2,19 +2,20 @@ import {
   Check,
   ChevronRight,
   CircleCheck,
-  Clock,
+  Cloud,
   ExternalLink,
   FileText,
-  Fingerprint,
   Headphones,
   Info,
-  Lock,
+  LineChart,
+  RefreshCcw,
+  Rocket,
   Send,
+  Settings,
   Shield,
   ShieldCheck,
-  User,
 } from "lucide-react";
-import { FirstAdvantageMark } from "@/components/brand-marks";
+import { LogoMark } from "@/components/brand-marks";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SupportSheet } from "@/components/support-sheet";
@@ -23,8 +24,8 @@ import { CONTACT } from "@/lib/content";
 import { useSite } from "@/lib/site-context";
 import { cn } from "@/lib/utils";
 
-const featureIcons = [Shield, CircleCheck, Lock, Headphones] as const;
-const stepIcons = [FileText, User, ExternalLink, ShieldCheck, Clock, CircleCheck] as const;
+const featureIcons = [Rocket, RefreshCcw, Cloud, Headphones] as const;
+const stepIcons = [Settings, FileText, ShieldCheck, Rocket, LineChart, CircleCheck] as const;
 
 export function HomePage() {
   return (
@@ -99,7 +100,7 @@ function Hero() {
         <div className="relative min-h-[320px] sm:min-h-[420px]">
           <img
             src="/images/hero.jpg"
-            alt="Verification specialist"
+            alt="HACYBERGLOBALTECH specialist"
             className="h-[340px] w-full rounded-2xl object-cover object-center shadow-[var(--shadow-card)] outline outline-1 -outline-offset-1 outline-white/10 sm:h-[440px] lg:hidden"
           />
           <div className="absolute top-4 right-2 w-[190px] rounded-xl border border-line bg-surface/55 p-4 shadow-[var(--shadow-glow)] backdrop-blur-xl sm:right-6 sm:top-8 sm:w-[210px]">
@@ -115,7 +116,7 @@ function Hero() {
           </div>
           <div className="absolute right-2 bottom-6 w-[210px] rounded-xl border border-line bg-surface/55 p-4 shadow-[var(--shadow-glow)] backdrop-blur-xl sm:right-8 sm:bottom-10 sm:w-[230px]">
             <div className="mb-3 flex size-10 items-center justify-center rounded-full border border-accent/40 text-accent">
-              <Fingerprint className="size-5" />
+              <Rocket className="size-5" />
             </div>
             <ul className="space-y-1.5">
               {h.checks.map((item) => (
@@ -146,7 +147,7 @@ function ProviderSection() {
           </span>
           <div className="mt-5 grid gap-6 md:grid-cols-[auto_1fr] md:items-start">
             <div className="flex items-center gap-3">
-              <FirstAdvantageMark className="size-16" />
+              <LogoMark className="size-16" />
               <div>
                 <p className="font-display text-2xl font-semibold text-fg">{p.name}</p>
                 <p className="text-xs text-muted">{p.tag}</p>
@@ -255,7 +256,7 @@ function CtaSection() {
       <div className="glass-panel mx-auto grid max-w-[1280px] items-center gap-6 rounded-2xl p-4 sm:p-6 lg:grid-cols-[0.9fr_1.4fr_0.8fr]">
         <img
           src="/images/laptop.jpg"
-          alt="Secure verification workstation"
+          alt="Secure HACYBERGLOBALTECH workstation"
           className="h-40 w-full rounded-xl object-cover outline outline-1 -outline-offset-1 outline-white/10 sm:h-44"
         />
         <div className="lg:px-4">
@@ -268,9 +269,9 @@ function CtaSection() {
           </Button>
         </div>
         <div className="flex flex-col items-center justify-center border-t border-line pt-4 text-center lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6">
-          <FirstAdvantageMark className="size-14" />
-          <p className="mt-2 font-display text-lg font-semibold text-fg">First Advantage</p>
-          <p className="text-[11px] text-muted">A Symphony Technology Group Company</p>
+          <LogoMark className="size-14" />
+          <p className="mt-2 font-display text-lg font-semibold text-fg">HACYBERGLOBALTECH</p>
+          <p className="text-[11px] text-muted">Automated Deployment & Reactivation</p>
           <p className="mt-3 text-sm font-semibold text-muted">{c.trust}</p>
         </div>
       </div>

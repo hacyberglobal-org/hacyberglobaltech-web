@@ -16,7 +16,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "HACYBERGLOBALTECH — official background check and verification support with authorized provider partners including First Advantage.",
+          "HACYBERGLOBALTECH — automated deployment and reactivation services: web software, application setup, digital workflows, official verification support, and live technical guidance.",
       },
       { name: "theme-color", content: "#050A14" },
     ],

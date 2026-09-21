@@ -47,7 +47,7 @@ export function SupportSheet() {
     if (!validate()) return;
     setSending(true);
     const subject = encodeURIComponent(
-      `Verification support — ${service || "General"} — ${name}`,
+      `HACYBERGLOBALTECH support — ${service || "General"} — ${name}`,
     );
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "—"}\nService: ${service || "—"}\n\n${message}`,
