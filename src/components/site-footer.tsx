@@ -1,0 +1,73 @@
+import { Headphones, ChevronRight } from "lucide-react";
+import {
+  BrandLockup,
+  InstagramIcon,
+  TelegramIcon,
+  TikTokIcon,
+  WhatsAppIcon,
+  YouTubeIcon,
+} from "@/components/brand-marks";
+import { CONTACT } from "@/lib/content";
+import { useSite } from "@/lib/site-context";
+import { cn } from "@/lib/utils";
+
+const socials = [
+  { key: "whatsapp", href: CONTACT.socials.whatsapp, Icon: WhatsAppIcon, label: "WhatsApp" },
+  { key: "telegram", href: CONTACT.socials.telegram, Icon: TelegramIcon, label: "Telegram" },
+  { key: "tiktok", href: CONTACT.socials.tiktok, Icon: TikTokIcon, label: "TikTok" },
+  { key: "instagram", href: CONTACT.socials.instagram, Icon: InstagramIcon, label: "Instagram" },
+  { key: "youtube", href: CONTACT.socials.youtube, Icon: YouTubeIcon, label: "YouTube" },
+] as const;
+
+export function SiteFooter() {
+  const { t, openSupport } = useSite();
+
+  return (
+    <footer id="contact" className="border-t border-line bg-bg">
+      <div className="mx-auto grid max-w-[1280px] gap-8 px-4 py-8 sm:px-6 md:grid-cols-[1.2fr_1.4fr_1fr_1.1fr] md:items-center">
+        <BrandLockup compact />
+        <div className="text-center md:text-left">
+          <p className="font-display text-sm font-semibold tracking-wide text-fg">
+            {t.footer.values}
+          </p>
+          <p className="mt-1 text-xs text-muted">{t.footer.tagline}</p>
+        </div>
+        <div>
+          <p className="mb-2 text-xs font-medium text-muted">{t.footer.connect}</p>
+          <div className="flex items-center gap-2">
+            {socials.map(({ key, href, Icon, label }) => (
+              <a
+                key={key}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className={cn(
+                  "flex size-9 items-center justify-center rounded-full border border-line bg-surface/50 text-accent",
+                  "transition-[box-shadow,border-color,transform] duration-150 hover:border-line-strong hover:shadow-[var(--shadow-glow)]",
+                )}
+              >
+                <Icon className="size-4" />
+              </a>
+            ))}
+          </div>
+        </div>
+        <button
+          onClick={() => openSupport()}
+          className="flex items-center gap-3 rounded-xl border border-line bg-surface/40 px-4 py-3 text-left transition-colors hover:border-line-strong"
+        >
+          <span className="flex size-10 items-center justify-center rounded-full border border-line text-accent">
+            <Headphones className="size-5" />
+          </span>
+          <span>
+            <span className="block text-xs text-muted">{t.footer.help}</span>
+            <span className="inline-flex items-center gap-1 text-sm font-semibold text-fg">
+              {t.footer.contact}
+              <ChevronRight className="size-4 text-accent" />
+            </span>
+          </span>
+        </button>
+      </div>
+    </footer>
+  );
+}
