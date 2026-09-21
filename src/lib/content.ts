@@ -32,7 +32,7 @@ export const copy = {
       { id: "driver", label: "Driver Support" },
       { id: "account", label: "Account Assistance" },
       { id: "setup", label: "App Setup Help" },
-      { id: "workflow", label: "Workflow Optimization" },
+      { id: "workflow", label: "Delivery Operations" },
       { id: "guidance", label: "Secure Account Guidance" },
     ],
     hero: {
@@ -71,8 +71,8 @@ export const copy = {
       items: [
         "Get driver and delivery operations support",
         "Receive account assistance with a clear next step",
-        "Set up and configure apps with live technical help",
-        "Optimize workflows and keep accounts guided securely",
+        "Get app setup help with live support",
+        "Keep delivery operations and accounts guided securely",
       ],
       footer: "Your operations. Our support. Officially.",
     },
@@ -82,19 +82,19 @@ export const copy = {
       steps: [
         {
           title: "Choose Your Service",
-          desc: "Driver support, account assistance, app setup help, or workflow optimization.",
+          desc: "Driver support, account assistance, app setup help, or delivery operations.",
         },
         {
           title: "Share Requirements",
-          desc: "Tell us the product, platform, or case so we can map the right path.",
+          desc: "Tell us the app, platform, or account issue so we can map the right path.",
         },
         {
           title: "Get a Clear Plan",
           desc: "You receive scope, documents needed, and the next official steps.",
         },
         {
-          title: "We Deliver",
-          desc: "We deploy, configure, or guide restoration through the proper channels.",
+          title: "We Assist",
+          desc: "We guide account assistance, app setup, and official next steps through the proper channels.",
         },
         {
           title: "Track Progress",
@@ -144,7 +144,7 @@ export const copy = {
       placeholderEmail: "you@email.com",
       placeholderPhone: "+1 …",
       placeholderMessage:
-        "Share the product, platform, or case and where you need help.",
+        "Share the app, platform, or account issue and where you need help.",
     },
   },
   es: {
@@ -160,7 +160,7 @@ export const copy = {
       { id: "driver", label: "Soporte para conductores" },
       { id: "account", label: "Asistencia de cuentas" },
       { id: "setup", label: "Ayuda de configuración" },
-      { id: "workflow", label: "Optimización de flujos" },
+      { id: "workflow", label: "Operaciones de delivery" },
       { id: "guidance", label: "Orientación segura de cuentas" },
     ],
     hero: {
@@ -199,8 +199,8 @@ export const copy = {
       items: [
         "Obtener soporte para operaciones de conductores y delivery",
         "Recibir asistencia de cuentas con un siguiente paso claro",
-        "Configurar apps con ayuda técnica en vivo",
-        "Optimizar flujos y mantener las cuentas guiadas de forma segura",
+        "Obtener ayuda de configuración de apps con soporte en vivo",
+        "Mantener operaciones de delivery y cuentas guiadas de forma segura",
       ],
       footer: "Sus operaciones. Nuestro soporte. De forma oficial.",
     },
@@ -210,19 +210,19 @@ export const copy = {
       steps: [
         {
           title: "Elija su servicio",
-          desc: "Soporte para conductores, asistencia de cuentas, configuración de apps u optimización de flujos.",
+          desc: "Soporte para conductores, asistencia de cuentas, configuración de apps u operaciones de delivery.",
         },
         {
           title: "Comparta requisitos",
-          desc: "Indique el producto, plataforma o caso para trazar la ruta correcta.",
+          desc: "Indique la app, plataforma o problema de cuenta para trazar la ruta correcta.",
         },
         {
           title: "Reciba un plan claro",
           desc: "Obtiene alcance, documentos necesarios y los siguientes pasos oficiales.",
         },
         {
-          title: "Entregamos",
-          desc: "Desplegamos, configuramos o guiamos la restauración por los canales correctos.",
+          title: "Asistimos",
+          desc: "Guiamos asistencia de cuentas, configuración de apps y los siguientes pasos oficiales por los canales correctos.",
         },
         {
           title: "Siga el progreso",
@@ -272,7 +272,7 @@ export const copy = {
       placeholderEmail: "usted@email.com",
       placeholderPhone: "+1 …",
       placeholderMessage:
-        "Indique el producto, la plataforma o el caso y en qué necesita ayuda.",
+        "Indique la app, la plataforma o el problema de cuenta y en qué necesita ayuda.",
     },
   },
 } as const;

@@ -7,7 +7,6 @@ import {
   Headphones,
   Info,
   LineChart,
-  Rocket,
   Send,
   Settings,
   Shield,
@@ -25,7 +24,7 @@ import { useSite } from "@/lib/site-context";
 import { cn } from "@/lib/utils";
 
 const featureIcons = [Shield, UserRound, Smartphone, Headphones] as const;
-const stepIcons = [Settings, FileText, ShieldCheck, Rocket, LineChart, CircleCheck] as const;
+const stepIcons = [Settings, FileText, ShieldCheck, Headphones, LineChart, CircleCheck] as const;
 
 export function HomePage() {
   return (
@@ -118,7 +117,7 @@ function Hero() {
           </div>
           <div className="absolute right-2 bottom-6 w-[210px] rounded-xl border border-line bg-surface/55 p-4 shadow-[var(--shadow-glow)] backdrop-blur-xl sm:right-8 sm:bottom-10 sm:w-[230px]">
             <div className="mb-3 flex size-10 items-center justify-center rounded-full border border-accent/40 text-accent">
-              <Rocket className="size-5" />
+              <ShieldCheck className="size-5" />
             </div>
             <ul className="space-y-1.5">
               {h.checks.map((item) => (
