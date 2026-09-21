@@ -5,6 +5,7 @@ import {
   TelegramIcon,
   TikTokIcon,
   WhatsAppIcon,
+  XIcon,
   YouTubeIcon,
 } from "@/components/brand-marks";
 import { CONTACT } from "@/lib/content";
@@ -14,6 +15,7 @@ import { cn } from "@/lib/utils";
 const socials = [
   { key: "whatsapp", href: CONTACT.socials.whatsapp, Icon: WhatsAppIcon, label: "WhatsApp" },
   { key: "telegram", href: CONTACT.socials.telegram, Icon: TelegramIcon, label: "Telegram" },
+  { key: "x", href: CONTACT.x, Icon: XIcon, label: "X" },
   { key: "tiktok", href: CONTACT.socials.tiktok, Icon: TikTokIcon, label: "TikTok" },
   { key: "instagram", href: CONTACT.socials.instagram, Icon: InstagramIcon, label: "Instagram" },
   { key: "youtube", href: CONTACT.socials.youtube, Icon: YouTubeIcon, label: "YouTube" },

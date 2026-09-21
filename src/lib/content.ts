@@ -5,13 +5,13 @@ export const CONTACT = {
   calendly: "https://calendly.com/hacybertech",
   address: "9540 Gemini Drive, Beaverton, OR 97008",
   fadv: "https://www.fadv.com/",
-  x: "https://x.com/hacybertech",
+  x: "https://x.com/hacyberglobaltech",
   phone: "+1 (213) 305-4168",
   phoneE164: "12133054168",
   socials: {
     whatsapp:
       "https://wa.me/12133054168?text=Hello%20HACYBERGLOBALTECH%20%E2%80%94%20I%20need%20deployment%2C%20reactivation%2C%20or%20verification%20support.",
-    telegram: "https://t.me/hacybertech",
+    telegram: "https://t.me/hacyberglobaltech",
     tiktok: "https://www.tiktok.com/@hacybertech",
     instagram: "https://www.instagram.com/hacybertech",
     youtube: "https://www.youtube.com/@hacybertech",

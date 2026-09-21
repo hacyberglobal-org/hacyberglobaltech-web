@@ -99,6 +99,14 @@ export function TelegramIcon({ className }: { className?: string }) {
   );
 }
 
+export function XIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+      <path d="M17.6 3H20.5L13.96 10.47 21.7 21H15.6l-4.74-6.2L5.4 21H2.48l7.02-8.02L2 3h6.26l4.28 5.67L17.6 3zm-1.02 16.16h1.6L7.5 4.74H5.78l10.8 14.42z" />
+    </svg>
+  );
+}
+
 export function TikTokIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
