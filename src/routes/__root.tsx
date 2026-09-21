@@ -16,7 +16,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "HACYBERGLOBALTECH — automated deployment and reactivation services: web software, application setup, digital workflows, official verification support, and live technical guidance.",
+          "HACYBERGLOBALTECH — driver support, account assistance, and app setup help. Professional delivery and digital support services with live technical guidance.",
       },
       { name: "theme-color", content: "#050A14" },
     ],

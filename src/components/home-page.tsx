@@ -2,18 +2,18 @@ import {
   Check,
   ChevronRight,
   CircleCheck,
-  Cloud,
   ExternalLink,
   FileText,
   Headphones,
   Info,
   LineChart,
-  RefreshCcw,
   Rocket,
   Send,
   Settings,
   Shield,
   ShieldCheck,
+  Smartphone,
+  UserRound,
 } from "lucide-react";
 import { LogoMark } from "@/components/brand-marks";
 import { SiteFooter } from "@/components/site-footer";
@@ -24,7 +24,7 @@ import { CONTACT } from "@/lib/content";
 import { useSite } from "@/lib/site-context";
 import { cn } from "@/lib/utils";
 
-const featureIcons = [Rocket, RefreshCcw, Cloud, Headphones] as const;
+const featureIcons = [Shield, UserRound, Smartphone, Headphones] as const;
 const stepIcons = [Settings, FileText, ShieldCheck, Rocket, LineChart, CircleCheck] as const;
 
 export function HomePage() {
@@ -68,7 +68,9 @@ function Hero() {
           <h1 className="mt-5 font-display text-[2.15rem] font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[56px]">
             <span className="text-fg">{h.h1a}</span>
             <br />
-            <span className="text-gradient">{h.h1b}</span>
+            <span className="text-fg">{h.h1b}</span>
+            <br />
+            <span className="text-gradient">{h.h1c}</span>
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted sm:text-base">
             {h.body}
@@ -271,7 +273,7 @@ function CtaSection() {
         <div className="flex flex-col items-center justify-center border-t border-line pt-4 text-center lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6">
           <LogoMark className="size-14" />
           <p className="mt-2 font-display text-lg font-semibold text-fg">HACYBERGLOBALTECH</p>
-          <p className="text-[11px] text-muted">Automated Deployment & Reactivation</p>
+          <p className="text-[11px] text-muted">Driver Support / Account Assistance</p>
           <p className="mt-3 text-sm font-semibold text-muted">{c.trust}</p>
         </div>
       </div>
