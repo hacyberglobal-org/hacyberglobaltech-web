@@ -101,7 +101,7 @@ function Hero() {
         <div className="relative min-h-[320px] sm:min-h-[420px]">
           <img
             src="/images/hero.jpg"
-            alt="HACYBERGLOBALTECH operator"
+            alt="HACYBERGLOBALTECH cyber operator"
             className="h-[340px] w-full rounded-2xl object-cover object-[40%_18%] shadow-[var(--shadow-card)] outline outline-1 -outline-offset-1 outline-white/10 sm:h-[440px] lg:hidden"
           />
           <div className="absolute top-4 right-2 w-[190px] rounded-xl border border-line bg-surface/55 p-4 shadow-[var(--shadow-glow)] backdrop-blur-xl sm:right-6 sm:top-8 sm:w-[210px]">
