@@ -43,7 +43,7 @@ export const PLATFORMS = [
   },
   {
     "slug": "spark",
-    "name": "Spark",
+    "name": "Walmart Spark",
     "color": "#0071CE",
     "file": "/images/apps/spark.svg",
     "kind": "mark"
@@ -67,6 +67,111 @@ export const PLATFORMS = [
     "name": "Shipt",
     "color": "#24CDD8",
     "file": "/images/apps/shipt.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "walmart",
+    "name": "Walmart",
+    "color": "#0071CE",
+    "file": "/images/apps/walmart.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "sparkdriver",
+    "name": "Spark Driver",
+    "color": "#0071CE",
+    "file": "/images/apps/sparkdriver.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "amazondsp",
+    "name": "Amazon DSP",
+    "color": "#FF9900",
+    "file": "/images/apps/amazondsp.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "doordashdrive",
+    "name": "DoorDash Drive",
+    "color": "#FF3008",
+    "file": "/images/apps/doordashdrive.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "uberdriver",
+    "name": "Uber Driver",
+    "color": "#FFFFFF",
+    "file": "/images/apps/uberdriver.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "instacartshopper",
+    "name": "Instacart Shopper",
+    "color": "#43B02A",
+    "file": "/images/apps/instacartshopper.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "gigsmart",
+    "name": "GigSmart",
+    "color": "#F59E0B",
+    "file": "/images/apps/gigsmart.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "wonolo",
+    "name": "Wonolo",
+    "color": "#22D3EE",
+    "file": "/images/apps/wonolo.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "veryable",
+    "name": "Veryable",
+    "color": "#818CF8",
+    "file": "/images/apps/veryable.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "waitr",
+    "name": "Waitr",
+    "color": "#FB7185",
+    "file": "/images/apps/waitr.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "cornershop",
+    "name": "Cornershop",
+    "color": "#84CC16",
+    "file": "/images/apps/cornershop.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "bitesquad",
+    "name": "Bite Squad",
+    "color": "#F97316",
+    "file": "/images/apps/bitesquad.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "fieldagent",
+    "name": "Field Agent",
+    "color": "#38BDF8",
+    "file": "/images/apps/fieldagent.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "rover",
+    "name": "Rover",
+    "color": "#34D399",
+    "file": "/images/apps/rover.svg",
+    "kind": "mark"
+  },
+  {
+    "slug": "wag",
+    "name": "Wag",
+    "color": "#FBBF24",
+    "file": "/images/apps/wag.svg",
     "kind": "mark"
   },
   {
@@ -300,4 +405,19 @@ export const PLATFORMS = [
     "file": "/images/apps/dunzo.svg",
     "kind": "logo"
   }
+] as const;
+
+export const FEATURED_SLUGS = [
+  "spark",
+  "shipt",
+  "walmart",
+  "uber",
+  "ubereats",
+  "lyft",
+  "doordash",
+  "instacart",
+  "amazonflex",
+  "grubhub",
+  "gopuff",
+  "sparkdriver",
 ] as const;

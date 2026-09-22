@@ -21,7 +21,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SupportSheet } from "@/components/support-sheet";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/lib/content";
-import { PLATFORMS } from "@/lib/platforms";
+import { PLATFORMS, FEATURED_SLUGS } from "@/lib/platforms";
 import { useSite } from "@/lib/site-context";
 import { cn } from "@/lib/utils";
 
@@ -291,6 +291,9 @@ function CtaSection() {
 function PlatformsSection() {
   const { t } = useSite();
   const p = t.platforms;
+  const featured = FEATURED_SLUGS.map((slug) => PLATFORMS.find((app) => app.slug === slug)).filter(
+    (app): app is (typeof PLATFORMS)[number] => Boolean(app),
+  );
   const row = [...PLATFORMS, ...PLATFORMS];
 
   return (
@@ -301,6 +304,17 @@ function PlatformsSection() {
           {p.title}
         </h2>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">{p.body}</p>
+        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {featured.map((app) => (
+            <li
+              key={app.slug}
+              className="flex min-h-20 flex-col items-center justify-center gap-1 rounded-xl border border-line bg-surface/50 px-2 py-3"
+            >
+              <img src={app.file} alt="" className="size-10" />
+              <span className="max-w-full truncate text-center text-xs font-semibold text-fg">{app.name}</span>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="mt-6 overflow-hidden">
         <div className="logo-marquee flex w-max gap-3 pr-3">
@@ -336,7 +350,7 @@ function GuideSection() {
             controls
             playsInline
             preload="metadata"
-            poster="/images/laptop.jpg"
+            poster="/images/guide-poster.jpg"
             aria-label={g.title}
           >
             <source src="/videos/guide.mp4" type="video/mp4" />
