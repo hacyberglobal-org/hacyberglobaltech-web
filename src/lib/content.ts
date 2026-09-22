@@ -8,6 +8,12 @@ export const CONTACT = {
   x: "https://x.com/hacyberglobaltech",
   phone: "+1 (213) 305-4168",
   phoneE164: "12133054168",
+  lead: "https://lead.hacyberglobal.dpdns.org/",
+  legal: {
+    privacy:
+      "https://hacybersupport.github.io/hacyber-legal-pages/privacy-policy.html",
+    portal: "https://hacybersupport.github.io/hacyber-legal-pages/",
+  },
   socials: {
     whatsapp:
       "https://wa.me/12133054168?text=Hello%20HACYBERGLOBALTECH%20%E2%80%94%20I%20need%20driver%20support%2C%20account%20assistance%2C%20or%20app%20setup%20help.",
@@ -131,6 +137,9 @@ export const copy = {
       connect: "Connect With Us",
       help: "Need Help?",
       contact: "Contact Support",
+      privacy: "Privacy Policy",
+      legal: "Legal",
+      request: "Start a request",
     },
     support: {
       title: "Get Support",
@@ -149,6 +158,7 @@ export const copy = {
       book: "Book a support session",
       emailUs: "Email support",
       whatsapp: "Chat on WhatsApp",
+      request: "Open request form",
       close: "Close",
       required: "This field is required",
       invalidEmail: "Enter a valid email",
@@ -282,6 +292,9 @@ export const copy = {
       connect: "Conéctese con nosotros",
       help: "¿Necesita ayuda?",
       contact: "Contactar soporte",
+      privacy: "Política de privacidad",
+      legal: "Legal",
+      request: "Iniciar una solicitud",
     },
     support: {
       title: "Obtener soporte",
@@ -300,6 +313,7 @@ export const copy = {
       book: "Agendar una sesión de soporte",
       emailUs: "Escribir a soporte",
       whatsapp: "Chatear por WhatsApp",
+      request: "Abrir formulario de solicitud",
       close: "Cerrar",
       required: "Este campo es obligatorio",
       invalidEmail: "Ingrese un correo válido",

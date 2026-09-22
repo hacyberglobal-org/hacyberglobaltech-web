@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hacyberglobaltech-web.vercel.app/sitemap.xml

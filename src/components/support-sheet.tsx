@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Calendar, Mail, Send, X } from "lucide-react";
+import { Calendar, ExternalLink, Mail, Send, X } from "lucide-react";
 import { toast } from "sonner";
 import { WhatsAppIcon } from "@/components/brand-marks";
 import { Button } from "@/components/ui/button";
@@ -108,6 +108,13 @@ export function SupportSheet() {
                     >
                       <WhatsAppIcon className="size-4" aria-hidden="true" />
                       {s.whatsapp}
+                      <span className="sr-only">({t.a11y.opensNewWindow})</span>
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href={CONTACT.lead} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="size-4" aria-hidden="true" />
+                      {s.request}
                       <span className="sr-only">({t.a11y.opensNewWindow})</span>
                     </a>
                   </Button>

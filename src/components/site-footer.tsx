@@ -73,6 +73,38 @@ export function SiteFooter() {
           </span>
         </button>
       </div>
+      <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-center gap-x-5 gap-y-2 border-t border-line px-4 py-4 text-xs text-muted sm:px-6 md:justify-between">
+        <p>© {new Date().getFullYear()} HACYBERGLOBALTECH</p>
+        <nav className="flex flex-wrap items-center justify-center gap-4" aria-label={t.footer.legal}>
+          <a
+            href={CONTACT.legal.privacy}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-11 inline-flex items-center hover:text-fg"
+          >
+            {t.footer.privacy}
+            <span className="sr-only"> ({t.a11y.opensNewWindow})</span>
+          </a>
+          <a
+            href={CONTACT.legal.portal}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-11 inline-flex items-center hover:text-fg"
+          >
+            {t.footer.legal}
+            <span className="sr-only"> ({t.a11y.opensNewWindow})</span>
+          </a>
+          <a
+            href={CONTACT.lead}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-11 inline-flex items-center hover:text-fg"
+          >
+            {t.footer.request}
+            <span className="sr-only"> ({t.a11y.opensNewWindow})</span>
+          </a>
+        </nav>
+      </div>
     </footer>
   );
 }
