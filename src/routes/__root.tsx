@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteProvider } from "@/lib/site-context";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "HACYBERGLOBALTECH";
@@ -47,6 +48,7 @@ export const Route = createRootRoute({
             <Toaster theme="dark" position="top-center" richColors />
           </SiteProvider>
         </AuthProvider>
+        <Analytics />
         <Scripts />
       </body>
     </html>
