@@ -53,7 +53,7 @@ export const copy = {
     services: {
       kicker: "ASSISTANCE",
       title: "Choose the help you need",
-      body: "A digital support and verification assistance center. We guide the next official step. We do not guarantee platform approval, earnings, or account outcomes.",
+      body: "A digital support and verification assistance center. We guide the next official step. We do not guarantee platform approval, earnings, or account outcomes. Never send passwords, one-time codes, 2FA codes, recovery codes, or PINs.",
       items: [
         {
           title: "Gig platform support",
@@ -263,7 +263,7 @@ export const copy = {
     services: {
       kicker: "ASISTENCIA",
       title: "Elija la ayuda que necesita",
-      body: "Un centro de soporte digital y asistencia de verificación. Guiamos el siguiente paso oficial. No garantizamos aprobaciones, ingresos ni resultados de cuentas.",
+      body: "Un centro de soporte digital y asistencia de verificación. Guiamos el siguiente paso oficial. No garantizamos aprobaciones, ingresos ni resultados de cuentas. Nunca envíe contraseñas, códigos de un solo uso, códigos 2FA, códigos de recuperación ni PIN.",
       items: [
         {
           title: "Soporte de plataformas gig",
