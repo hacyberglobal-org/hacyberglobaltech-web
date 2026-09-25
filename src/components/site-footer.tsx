@@ -1,6 +1,7 @@
 import { Headphones, ChevronRight } from "lucide-react";
 import {
   BrandLockup,
+  FacebookIcon,
   InstagramIcon,
   TelegramIcon,
   TikTokIcon,
@@ -17,6 +18,7 @@ const socials = [
   { key: "telegram", href: CONTACT.socials.telegram, Icon: TelegramIcon, label: "Telegram" },
   { key: "x", href: CONTACT.x, Icon: XIcon, label: "X" },
   { key: "tiktok", href: CONTACT.socials.tiktok, Icon: TikTokIcon, label: "TikTok" },
+  { key: "facebook", href: CONTACT.socials.facebook, Icon: FacebookIcon, label: "Facebook" },
   { key: "instagram", href: CONTACT.socials.instagram, Icon: InstagramIcon, label: "Instagram" },
   { key: "youtube", href: CONTACT.socials.youtube, Icon: YouTubeIcon, label: "YouTube" },
 ] as const;
@@ -33,6 +35,20 @@ export function SiteFooter() {
             {t.footer.values}
           </p>
           <p className="mt-1 text-xs text-muted">{t.footer.tagline}</p>
+          <p className="mt-2 flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs md:justify-start">
+            <a className="min-h-11 inline-flex items-center hover:text-fg" href={`mailto:${CONTACT.email}`}>
+              {CONTACT.email}
+            </a>
+            <a
+              className="min-h-11 inline-flex items-center hover:text-fg"
+              href={CONTACT.socials.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp {CONTACT.phone}
+              <span className="sr-only"> ({t.a11y.opensNewWindow})</span>
+            </a>
+          </p>
         </div>
         <div>
           <p id="connect-heading" className="mb-2 text-xs font-medium text-muted">
@@ -83,6 +99,15 @@ export function SiteFooter() {
             className="min-h-11 inline-flex items-center hover:text-fg"
           >
             {t.footer.privacy}
+            <span className="sr-only"> ({t.a11y.opensNewWindow})</span>
+          </a>
+          <a
+            href={CONTACT.legal.terms}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-11 inline-flex items-center hover:text-fg"
+          >
+            {t.footer.terms}
             <span className="sr-only"> ({t.a11y.opensNewWindow})</span>
           </a>
           <a

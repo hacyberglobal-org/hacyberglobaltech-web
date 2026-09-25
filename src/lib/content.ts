@@ -1,7 +1,7 @@
 export type Lang = "en" | "es";
 
 export const CONTACT = {
-  email: "hacybertech@gmail.com",
+  email: "hacyberhub@mail.com",
   calendly: "https://calendly.com/hacybertech",
   address: "9540 Gemini Drive, Beaverton, OR 97008",
   fadv: "https://www.fadv.com/",
@@ -9,16 +9,20 @@ export const CONTACT = {
   phone: "+1 (213) 305-4168",
   phoneE164: "12133054168",
   lead: "https://lead.hacyberglobal.dpdns.org/",
+  site: "https://hacyberglobaltech-web.vercel.app/",
   legal: {
     privacy:
       "https://hacybersupport.github.io/hacyber-legal-pages/privacy-policy.html",
+    terms:
+      "https://hacybersupport.github.io/hacyber-legal-pages/terms-of-service.html",
     portal: "https://hacybersupport.github.io/hacyber-legal-pages/",
   },
   socials: {
     whatsapp:
-      "https://wa.me/12133054168?text=Hello%20HACYBERGLOBALTECH%20%E2%80%94%20I%20need%20driver%20support%2C%20account%20assistance%2C%20or%20app%20setup%20help.",
+      "https://wa.me/12133054168?text=Hello%20HACYBERGLOBALTECH%20%E2%80%94%20I%20need%20digital%20support.",
     telegram: "https://t.me/hacyberglobaltech",
-    tiktok: "https://www.tiktok.com/@hacybertech",
+    tiktok: "https://www.tiktok.com/@hacyberglobaltech",
+    facebook: "https://www.facebook.com/hacyberglobaltech/",
     instagram: "https://www.instagram.com/hacybertech",
     youtube: "https://www.youtube.com/@hacybertech",
   },
@@ -35,31 +39,83 @@ export const copy = {
       getSupport: "Get Support",
     },
     servicesMenu: [
-      { id: "driver", label: "Driver Support" },
-      { id: "account", label: "Account Assistance" },
-      { id: "setup", label: "App Setup Help" },
-      { id: "workflow", label: "Delivery Operations" },
-      { id: "guidance", label: "Secure Account Guidance" },
+      { id: "gig", label: "Gig platform support" },
+      { id: "fleet", label: "Driver & fleet assistance" },
+      { id: "verify", label: "Verification guidance" },
+      { id: "background", label: "Background-check guidance" },
+      { id: "tech", label: "Technical support" },
+      { id: "setup", label: "Digital setup assistance" },
+      { id: "trouble", label: "Platform troubleshooting" },
+      { id: "business", label: "Business technology support" },
+      { id: "consult", label: "Consultation" },
+      { id: "secure", label: "Secure digital solutions" },
     ],
+    services: {
+      kicker: "ASSISTANCE",
+      title: "Choose the help you need",
+      body: "A digital support and verification assistance center. We guide the next official step. We do not guarantee platform approval, earnings, or account outcomes.",
+      items: [
+        {
+          title: "Gig platform support",
+          desc: "Day-to-day help for driver, shopper, and delivery apps.",
+        },
+        {
+          title: "Driver & fleet assistance",
+          desc: "Workflow and operations guidance for drivers and small fleets.",
+        },
+        {
+          title: "Verification guidance",
+          desc: "A clear walkthrough of official verification steps.",
+        },
+        {
+          title: "Background-check guidance",
+          desc: "Orientation on screening through authorized providers. We do not run the check.",
+        },
+        {
+          title: "Technical support",
+          desc: "App errors, device setup, and access issues — without your password.",
+        },
+        {
+          title: "Digital setup assistance",
+          desc: "Help getting an app or account ready the official way.",
+        },
+        {
+          title: "Platform troubleshooting",
+          desc: "Next steps when a workflow or app is stuck.",
+        },
+        {
+          title: "Business technology support",
+          desc: "Practical help for the tools your operation already uses.",
+        },
+        {
+          title: "Consultation",
+          desc: "A scoped conversation about what you need and what we can assist with.",
+        },
+        {
+          title: "Secure digital solutions",
+          desc: "Guidance that keeps credentials with you.",
+        },
+      ],
+    },
     hero: {
-      badge: "HACYBERGLOBALTECH SERVICES",
-      h1a: "Driver Support /",
-      h1b: "Account Assistance /",
-      h1c: "App Setup Help",
-      body: "Professional delivery and digital support services, including account reactivation assistance, technical support, driver and delivery operations, workflow optimization, and secure account guidance.",
+      badge: "HACYBERGLOBALTECH",
+      h1a: "Digital Support &",
+      h1b: "Verification",
+      h1c: "Assistance",
+      body: "HACYBERGLOBALTECH provides digital support, gig platform assistance, verification guidance, technical support, and secure digital solutions. This is guidance — not a promise of platform approval, earnings, or account outcomes.",
       features: [
-        { title: "Driver", sub: "Support" },
-        { title: "Account", sub: "Assistance" },
-        { title: "App Setup", sub: "Help" },
+        { title: "Gig", sub: "Support" },
+        { title: "Driver", sub: "Assistance" },
+        { title: "Verification", sub: "Guidance" },
         { title: "Live", sub: "Support" },
       ],
       verified: "GLOBAL",
       verifiedSub: "DRIVER SUPPORT",
       checks: [
-        "Driver Support",
-        "Account Assistance",
-        "App Setup Help",
-        "Secure Guidance",
+        "Gig platform support",
+        "Verification guidance",
+        "Technical support",
+        "Secure assistance",
       ],
     },
     provider: {
@@ -138,6 +194,7 @@ export const copy = {
       help: "Need Help?",
       contact: "Contact Support",
       privacy: "Privacy Policy",
+      terms: "Terms of Service",
       legal: "Legal",
       request: "Start a request",
     },
@@ -166,7 +223,9 @@ export const copy = {
       placeholderEmail: "you@email.com",
       placeholderPhone: "+1 …",
       placeholderMessage:
-        "Share the app, platform, or account issue and where you need help.",
+        "Share the app, platform, or issue. Do not include passwords or codes.",
+      security:
+        "Never send passwords, one-time codes, 2FA codes, recovery codes, or PINs. HACYBERGLOBALTECH will not ask for them.",
     },
     a11y: {
       skip: "Skip to main content",
@@ -190,31 +249,83 @@ export const copy = {
       getSupport: "Obtener soporte",
     },
     servicesMenu: [
-      { id: "driver", label: "Soporte para conductores" },
-      { id: "account", label: "Asistencia de cuentas" },
-      { id: "setup", label: "Ayuda de configuración" },
-      { id: "workflow", label: "Operaciones de delivery" },
-      { id: "guidance", label: "Orientación segura de cuentas" },
+      { id: "gig", label: "Soporte de plataformas gig" },
+      { id: "fleet", label: "Asistencia para conductores y flotas" },
+      { id: "verify", label: "Orientación de verificación" },
+      { id: "background", label: "Orientación de antecedentes" },
+      { id: "tech", label: "Soporte técnico" },
+      { id: "setup", label: "Asistencia de configuración digital" },
+      { id: "trouble", label: "Resolución de plataformas" },
+      { id: "business", label: "Soporte tecnológico de negocio" },
+      { id: "consult", label: "Consulta" },
+      { id: "secure", label: "Soluciones digitales seguras" },
     ],
+    services: {
+      kicker: "ASISTENCIA",
+      title: "Elija la ayuda que necesita",
+      body: "Un centro de soporte digital y asistencia de verificación. Guiamos el siguiente paso oficial. No garantizamos aprobaciones, ingresos ni resultados de cuentas.",
+      items: [
+        {
+          title: "Soporte de plataformas gig",
+          desc: "Ayuda diaria para apps de conductores, compradores y delivery.",
+        },
+        {
+          title: "Asistencia para conductores y flotas",
+          desc: "Orientación de operaciones y flujos para conductores y flotas pequeñas.",
+        },
+        {
+          title: "Orientación de verificación",
+          desc: "Un recorrido claro de los pasos oficiales de verificación.",
+        },
+        {
+          title: "Orientación de antecedentes",
+          desc: "Orientación sobre screening con proveedores autorizados. No realizamos el chequeo.",
+        },
+        {
+          title: "Soporte técnico",
+          desc: "Errores de apps, configuración del dispositivo y acceso — sin su contraseña.",
+        },
+        {
+          title: "Asistencia de configuración digital",
+          desc: "Ayuda para preparar una app o cuenta por la vía oficial.",
+        },
+        {
+          title: "Resolución de plataformas",
+          desc: "Siguientes pasos cuando un flujo o una app se detiene.",
+        },
+        {
+          title: "Soporte tecnológico de negocio",
+          desc: "Ayuda práctica para las herramientas que ya usa su operación.",
+        },
+        {
+          title: "Consulta",
+          desc: "Una conversación con alcance sobre lo que necesita y lo que podemos asistir.",
+        },
+        {
+          title: "Soluciones digitales seguras",
+          desc: "Orientación que deja las credenciales con usted.",
+        },
+      ],
+    },
     hero: {
-      badge: "SERVICIOS HACYBERGLOBALTECH",
-      h1a: "Soporte para conductores /",
-      h1b: "Asistencia de cuentas /",
-      h1c: "Ayuda de configuración",
-      body: "Servicios profesionales de delivery y soporte digital, incluyendo asistencia para reactivación de cuentas, soporte técnico, operaciones de conductores y delivery, optimización de flujos de trabajo y orientación segura de cuentas.",
+      badge: "HACYBERGLOBALTECH",
+      h1a: "Soporte digital y",
+      h1b: "verificación",
+      h1c: "Asistencia",
+      body: "HACYBERGLOBALTECH ofrece soporte digital, asistencia en plataformas gig, orientación de verificación, soporte técnico y soluciones digitales seguras. Es orientación — no una promesa de aprobación, ingresos o resultados de cuenta.",
       features: [
-        { title: "Conductores", sub: "Soporte" },
-        { title: "Cuentas", sub: "Asistencia" },
-        { title: "Apps", sub: "Configuración" },
+        { title: "Gig", sub: "Soporte" },
+        { title: "Conductores", sub: "Asistencia" },
+        { title: "Verificación", sub: "Orientación" },
         { title: "Soporte", sub: "en vivo" },
       ],
       verified: "GLOBAL",
       verifiedSub: "SOPORTE DRIVER",
       checks: [
-        "Soporte para conductores",
-        "Asistencia de cuentas",
-        "Ayuda de configuración",
-        "Orientación segura",
+        "Soporte de plataformas gig",
+        "Orientación de verificación",
+        "Soporte técnico",
+        "Asistencia segura",
       ],
     },
     provider: {
@@ -293,6 +404,7 @@ export const copy = {
       help: "¿Necesita ayuda?",
       contact: "Contactar soporte",
       privacy: "Política de privacidad",
+      terms: "Términos de servicio",
       legal: "Legal",
       request: "Iniciar una solicitud",
     },
@@ -321,7 +433,9 @@ export const copy = {
       placeholderEmail: "usted@email.com",
       placeholderPhone: "+1 …",
       placeholderMessage:
-        "Indique la app, la plataforma o el problema de cuenta y en qué necesita ayuda.",
+        "Indique la app, la plataforma o el problema. No incluya contraseñas ni códigos.",
+      security:
+        "Nunca envíe contraseñas, códigos de un solo uso, códigos 2FA, códigos de recuperación ni PIN. HACYBERGLOBALTECH no los pedirá.",
     },
     a11y: {
       skip: "Saltar al contenido principal",

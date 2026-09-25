@@ -199,6 +199,7 @@ export function SupportSheet() {
                     aria-describedby={errors.message ? "support-message-error" : undefined}
                   />
                 </Field>
+                <p className="text-xs leading-relaxed text-muted">{s.security}</p>
                 <Button type="submit" size="lg" disabled={sending} aria-busy={sending}>
                   <Send className="size-4" aria-hidden="true" />
                   {sending ? s.sending : s.submit}

@@ -34,6 +34,7 @@ export function HomePage() {
       <SiteHeader />
       <main id="main" tabIndex={-1}>
         <Hero />
+        <ServicesSection />
         <PlatformsSection />
         <ProviderSection />
         <ProcessSection />
@@ -133,6 +134,37 @@ function Hero() {
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function ServicesSection() {
+  const { t, openSupport } = useSite();
+  const s = t.services;
+
+  return (
+    <section id="services" className="px-4 py-8 sm:px-6" aria-labelledby="services-heading">
+      <div className="mx-auto max-w-[1280px]">
+        <p className="text-xs font-bold tracking-[0.16em] text-accent">{s.kicker}</p>
+        <h2 id="services-heading" className="mt-1 font-display text-2xl font-bold text-fg sm:text-3xl">
+          {s.title}
+        </h2>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">{s.body}</p>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {s.items.map((item) => (
+            <li key={item.title}>
+              <button
+                type="button"
+                onClick={() => openSupport(item.title)}
+                className="flex h-full min-h-28 w-full flex-col rounded-xl border border-line bg-surface/40 p-4 text-left transition-[box-shadow,border-color] duration-200 hover:border-line-strong hover:shadow-[var(--shadow-glow)]"
+              >
+                <span className="font-display text-sm font-semibold text-fg">{item.title}</span>
+                <span className="mt-2 text-xs leading-relaxed text-muted">{item.desc}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
