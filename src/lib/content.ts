@@ -9,7 +9,7 @@ export const CONTACT = {
   phone: "+1 (213) 305-4168",
   phoneE164: "12133054168",
   lead: "https://lead.hacyberglobal.dpdns.org/",
-  site: "https://hacyberglobaltech-web.vercel.app/",
+  site: "https://web.hacyberglobal.dpdns.org/",
   legal: {
     privacy:
       "https://hacybersupport.github.io/hacyber-legal-pages/privacy-policy.html",
@@ -53,7 +53,7 @@ export const copy = {
     services: {
       kicker: "ASSISTANCE",
       title: "Choose the help you need",
-      body: "A digital support and verification assistance center. We guide the next official step. We do not guarantee platform approval, earnings, or account outcomes. Never send passwords, one-time codes, 2FA codes, recovery codes, or PINs.",
+      body: "Professional digital support and verification assistance for gig drivers, fleets, and operators. We guide the next official step. We do not guarantee platform approval, earnings, or account outcomes. Never send passwords, one-time codes, 2FA codes, recovery codes, or PINs.",
       items: [
         {
           title: "Gig platform support",
@@ -99,10 +99,10 @@ export const copy = {
     },
     hero: {
       badge: "HACYBERGLOBALTECH",
-      h1a: "Digital Support &",
-      h1b: "Verification",
-      h1c: "Assistance",
-      body: "HACYBERGLOBALTECH provides digital support, gig platform assistance, verification guidance, technical support, and secure digital solutions. This is guidance — not a promise of platform approval, earnings, or account outcomes.",
+      h1a: "Gig, driver & fleet",
+      h1b: "assistance",
+      h1c: "built for clarity",
+      body: "Tech support, verification guidance, and secure digital solutions for drivers and operators. Clear next steps — no passwords, no OTPs, no guarantees of platform approval.",
       features: [
         { title: "Gig", sub: "Support" },
         { title: "Driver", sub: "Assistance" },
@@ -182,10 +182,10 @@ export const copy = {
     },
     cta: {
       kicker: "READY TO GET STARTED?",
-      title: "Let's Get You Supported.",
-      body: "Driver support, account assistance, or app setup help — one team for delivery operations, technical support, and secure account guidance.",
+      title: "Get clear support today.",
+      body: "Driver support, account assistance, or app setup help — one professional team for delivery operations, technical guidance, and secure next steps.",
       button: "Get Support Now",
-      trust: "Trusted. Global. Compliant.",
+      trust: "Secure · Reliable · Professional",
     },
     footer: {
       values: "Secure  ·  Reliable  ·  Global",
@@ -263,7 +263,7 @@ export const copy = {
     services: {
       kicker: "ASISTENCIA",
       title: "Elija la ayuda que necesita",
-      body: "Un centro de soporte digital y asistencia de verificación. Guiamos el siguiente paso oficial. No garantizamos aprobaciones, ingresos ni resultados de cuentas. Nunca envíe contraseñas, códigos de un solo uso, códigos 2FA, códigos de recuperación ni PIN.",
+      body: "Soporte digital profesional y asistencia de verificación para conductores gig, flotas y operadores. Guiamos el siguiente paso oficial. No garantizamos aprobaciones, ingresos ni resultados de cuentas. Nunca envíe contraseñas, códigos de un solo uso, códigos 2FA, códigos de recuperación ni PIN.",
       items: [
         {
           title: "Soporte de plataformas gig",
@@ -309,10 +309,10 @@ export const copy = {
     },
     hero: {
       badge: "HACYBERGLOBALTECH",
-      h1a: "Soporte digital y",
-      h1b: "verificación",
-      h1c: "Asistencia",
-      body: "HACYBERGLOBALTECH ofrece soporte digital, asistencia en plataformas gig, orientación de verificación, soporte técnico y soluciones digitales seguras. Es orientación — no una promesa de aprobación, ingresos o resultados de cuenta.",
+      h1a: "Asistencia gig,",
+      h1b: "conductores y flotas",
+      h1c: "con claridad",
+      body: "Soporte técnico, orientación de verificación y soluciones digitales seguras para conductores y operadores. Pasos claros — sin contraseñas, sin OTP, sin garantías de aprobación de plataforma.",
       features: [
         { title: "Gig", sub: "Soporte" },
         { title: "Conductores", sub: "Asistencia" },
@@ -392,10 +392,10 @@ export const copy = {
     },
     cta: {
       kicker: "¿LISTO PARA EMPEZAR?",
-      title: "Pongámosle soporte.",
-      body: "Soporte para conductores, asistencia de cuentas o ayuda de configuración — un solo equipo para operaciones de delivery, soporte técnico y orientación segura de cuentas.",
+      title: "Obtenga soporte claro hoy.",
+      body: "Soporte para conductores, asistencia de cuentas o ayuda de configuración — un equipo profesional para operaciones de delivery, orientación técnica y siguientes pasos seguros.",
       button: "Obtener soporte ahora",
-      trust: "Confiable. Global. Cumplimiento.",
+      trust: "Seguro · Confiable · Profesional",
     },
     footer: {
       values: "Seguro  ·  Confiable  ·  Global",
