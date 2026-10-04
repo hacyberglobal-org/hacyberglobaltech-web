@@ -4,6 +4,7 @@ import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteProvider } from "@/lib/site-context";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
+import { RECAPTCHA_SCRIPT_SRC } from "@/lib/recaptcha";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "HACYBERGLOBALTECH — Digital Support & Verification Assistance";
@@ -29,12 +30,15 @@ export const Route = createRootRoute({
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://www.google.com" },
+      { rel: "preconnect", href: "https://www.gstatic.com", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
       },
     ],
+    scripts: [{ src: RECAPTCHA_SCRIPT_SRC, async: true }],
   }),
   notFoundComponent: NotFound,
   component: () => (
