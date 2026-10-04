@@ -6,6 +6,7 @@ import { WhatsAppIcon } from "@/components/brand-marks";
 import { Button } from "@/components/ui/button";
 import { Input, Label, Textarea } from "@/components/ui/input";
 import { CONTACT } from "@/lib/content";
+import { executeRecaptcha } from "@/lib/recaptcha";
 import { useSite } from "@/lib/site-context";
 import { cn } from "@/lib/utils";
 
@@ -42,7 +43,7 @@ export function SupportSheet() {
     return Object.keys(next).length === 0;
   }
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!validate()) {
       window.requestAnimationFrame(() => {
@@ -54,6 +55,13 @@ export function SupportSheet() {
       return;
     }
     setSending(true);
+    try {
+      await executeRecaptcha("support_submit");
+    } catch (err) {
+      setSending(false);
+      toast.error(err instanceof Error ? err.message : "Security check failed. Try again.");
+      return;
+    }
     const subject = encodeURIComponent(
       `HACYBERGLOBALTECH support — ${service || "General"} — ${name}`,
     );
@@ -204,6 +212,27 @@ export function SupportSheet() {
                   <Send className="size-4" aria-hidden="true" />
                   {sending ? s.sending : s.submit}
                 </Button>
+                <p className="text-[11px] leading-relaxed text-muted">
+                  This site is protected by reCAPTCHA and the Google{" "}
+                  <a
+                    className="underline underline-offset-2 hover:text-fg"
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Privacy Policy
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    className="underline underline-offset-2 hover:text-fg"
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Terms of Service
+                  </a>{" "}
+                  apply.
+                </p>
                 <a
                   href={CONTACT.socials.whatsapp}
                   target="_blank"
